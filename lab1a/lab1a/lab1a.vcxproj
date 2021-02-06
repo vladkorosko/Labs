@@ -142,7 +142,6 @@
     <ClCompile Include="condition_parser.cpp" />
     <ClCompile Include="condition_parser_test.cpp" />
     <ClCompile Include="lab1a.cpp" />
-    <ClCompile Include="StartProject.cpp" />
     <ClCompile Include="token.cpp" />
   </ItemGroup>
   <ItemGroup>
