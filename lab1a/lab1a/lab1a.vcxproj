@@ -139,7 +139,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="condition_parser.cpp" />
+    <ClCompile Include="condition_parser_test.cpp" />
     <ClCompile Include="lab1a.cpp" />
+    <ClCompile Include="StartProject.cpp" />
+    <ClCompile Include="token.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="condition_parser.h" />
+    <ClInclude Include="database.h" />
+    <ClInclude Include="date.h" />
+    <ClInclude Include="node.h" />
+    <ClInclude Include="test_runner.h" />
+    <ClInclude Include="token.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
