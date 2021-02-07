@@ -7,7 +7,7 @@
 
 class Date {
 public:
-    Date() {};
+    //Date() {};
 
     Date(int new_year, int new_month, int new_day) : year(new_year), month(new_month), day(new_day) {};
 
@@ -64,7 +64,7 @@ std::ostream& operator<<(std::ostream& s, const Date& date)
     return s;
 }
 
-std::istream& operator>>(std::istream& s, Date& date)
+Date ParseDate(std::istream& s)
 {
     std::string l;
     s >> l;
@@ -86,6 +86,5 @@ std::istream& operator>>(std::istream& s, Date& date)
     if (d < 1 || d > 31)
         throw std::runtime_error("Day value is invalid: " + std::to_string(d));
     Date new_date(y, m, d);
-    date = Date(y, m, d);
-    return s;
+    return Date(y, m, d);
 }
