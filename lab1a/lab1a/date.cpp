@@ -2,6 +2,8 @@
 
 using namespace std;
 
+Date::Date(int new_year, int new_month, int new_day) : year(new_year), month(new_month), day(new_day) {};
+
 void Date::operator=(const Date& d)
 {
     year = (d.GetYear());
@@ -31,6 +33,36 @@ bool operator<(const Date& lhs, const Date& rhs)
         (lhs.GetYear() == rhs.GetYear() && lhs.GetMonth() == rhs.GetMonth() && lhs.GetDay() < rhs.GetDay()))
         return true;
     return false;
+}
+
+bool operator>(const Date& lhs, const Date& rhs)
+{
+    if ((lhs.GetYear() > rhs.GetYear()) || (lhs.GetYear() == rhs.GetYear() && lhs.GetMonth() > rhs.GetMonth()) ||
+        (lhs.GetYear() == rhs.GetYear() && lhs.GetMonth() == rhs.GetMonth() && lhs.GetDay() > rhs.GetDay()))
+        return true;
+    return false;
+}
+
+bool operator==(const Date& lhs, const Date& rhs)
+{
+    if (lhs.GetYear() == rhs.GetYear() && lhs.GetMonth() == rhs.GetMonth() && lhs.GetDay() == rhs.GetDay())
+        return true;
+    return false;
+}
+
+bool operator<=(const Date& lhs, const Date& rhs)
+{
+    return !(lhs > rhs);
+}
+
+bool operator>=(const Date& lhs, const Date& rhs)
+{
+    return !(lhs < rhs);
+}
+
+bool operator!=(const Date& lhs, const Date& rhs)
+{
+    return !(lhs == rhs);
 }
 
 ostream& operator<<(ostream& s, const Date& date)
@@ -72,6 +104,5 @@ Date ParseDate(istream& s)
         throw runtime_error("Month value is invalid: " + to_string(m));
     if (d < 1 || d > 31)
         throw runtime_error("Day value is invalid: " + to_string(d));
-    Date new_date(y, m, d);
     return Date(y, m, d);
 }
