@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="condition_parser.cpp" />
     <ClCompile Include="condition_parser_test.cpp" />
+    <ClCompile Include="database.cpp" />
     <ClCompile Include="date.cpp" />
     <ClCompile Include="lab1a.cpp" />
     <ClCompile Include="token.cpp" />

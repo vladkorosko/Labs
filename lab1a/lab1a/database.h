@@ -3,45 +3,24 @@
 #include <string>
 #include <map>
 #include <set>
+#include <vector>
 #include "date.h"
+#include <algorithm>
+#include <memory>
 
 class Database 
 {
 public:
-    void AddEvent(const Date& date, const std::string& event)
-    {
-        events[date].insert(event);
-    }
+    void Add(const Date& date, const string& event);
 
-    bool DeleteEvent(const Date& date, const std::string& event)
-    {
-        return events[date].erase(event);
-    }
+    void Print(std::ostream& os) const;
 
-    int DeleteDate(const Date& date)
-    {
-        int n = events[date].size();
-        events.erase(date);
-        return n;
-    }
-
-    void Find(const Date& date) const
-    {
-        if (events.count(date) > 0)
-        {
-            std::set<std::string> value;
-            value = events.at(date);
-            for (const std::string& i : value)
-                std::cout << i << std::endl;
-        }
-    }
-
-    void Print() const
-    {
-        for (const auto& i : events)
-            for (const auto& j : i.second)
-                std::cout << i.first << ' ' << j << std::endl;
-    }
 private:
-    std::map<Date, std::set<std::string>> events;
+    struct DayEvents
+    {
+        std::set<std::string> elements;
+        std::vector<std::string> order;
+    };
+
+    std::map<Date, DayEvents> events;
 };
