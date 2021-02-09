@@ -15,6 +15,8 @@ public:
 
     void Print(std::ostream& os) const;
 
+    std::string Last(const Date& d) const;
+
 private:
     struct DayEvents
     {
