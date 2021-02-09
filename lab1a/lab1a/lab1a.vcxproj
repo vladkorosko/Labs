@@ -144,6 +144,7 @@
     <ClCompile Include="database.cpp" />
     <ClCompile Include="date.cpp" />
     <ClCompile Include="lab1a.cpp" />
+    <ClCompile Include="node.cpp" />
     <ClCompile Include="token.cpp" />
   </ItemGroup>
   <ItemGroup>

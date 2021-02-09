@@ -7,7 +7,7 @@
 
 class Date {
 public:
-    //Date() {};
+    Date();
 
     Date(int new_year, int new_month, int new_day);
 

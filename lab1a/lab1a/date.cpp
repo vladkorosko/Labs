@@ -2,6 +2,8 @@
 
 using namespace std;
 
+Date::Date() {};
+
 Date::Date(int new_year, int new_month, int new_day) : year(new_year), month(new_month), day(new_day) {};
 
 void Date::operator=(const Date& d)
