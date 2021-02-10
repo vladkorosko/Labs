@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <sstream>
 #include <string>
 #include <map>
 #include <set>
@@ -11,11 +12,13 @@
 class Database 
 {
 public:
-    void Add(const Date& date, const string& event);
+    void Add(const Date& date, const std::string& event);
 
     void Print(std::ostream& os) const;
 
     std::string Last(const Date& d) const;
+
+    
 
 private:
     struct DayEvents

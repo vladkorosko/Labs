@@ -16,16 +16,16 @@ void Database::Print(ostream& os) const
 			os << i.first << " " << j;
 }
 
-string Database::Last(const Date& d) const
-{
-	auto it = upper_bound(events.begin(), events.end(), d);
-	if (it == events.begin())
+std::string Database::Last(const Date& date) const {
+	auto last = events.upper_bound(date);
+	if (last == events.begin()) {
 		return "No entries";
-	else
+	}
+	else 
 	{
-		it = prev(it);
-		stringstream res;
-		res << it->first << " " << it->second.order[it->second.order.size() - 1];
-		return res.str();
+		last = prev(last);
+		stringstream s;
+		s << last->first << " " << last->second.order.back();
+		return s.str();
 	}
 }

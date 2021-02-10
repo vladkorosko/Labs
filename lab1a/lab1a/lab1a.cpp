@@ -8,15 +8,17 @@
 
 using namespace std;
 
-string ParseEvent(istream& is) {
+string ParseEvent(istream& is) 
+{
     // Реализуйте эту функцию
+    return "";
 }
 
-void TestAll();
+//void TestAll();
 
 int main() 
 {
-    TestAll();
+    //TestAll();
 
     Database db;
 
@@ -32,7 +34,7 @@ int main()
         }
         else if (command == "Print") {
             db.Print(cout);
-        }
+        }/*
         else if (command == "Del") {
             auto condition = ParseCondition(is);
             auto predicate = [condition](const Date& date, const string& event) {
@@ -52,7 +54,7 @@ int main()
                 cout << entry << endl;
             }
             cout << "Found " << entries.size() << " entries" << endl;
-        }
+        }*/
         else if (command == "Last") {
             try {
                 cout << db.Last(ParseDate(is)) << endl;
@@ -71,7 +73,7 @@ int main()
 
     return 0;
 }
-
+/*
 void TestParseEvent() {
     {
         istringstream is("event");
@@ -94,4 +96,4 @@ void TestAll() {
     TestRunner tr;
     tr.RunTest(TestParseEvent, "TestParseEvent");
     tr.RunTest(TestParseCondition, "TestParseCondition");
-}
+}*/
