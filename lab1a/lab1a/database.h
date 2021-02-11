@@ -62,6 +62,26 @@ public:
         return count;
     }
 
+    template <typename Predicate>
+    std::vector<std::string> FindIf(Predicate predicate) const 
+    {
+        std::vector<std::string> result;
+        for (const auto& date : events) 
+        {
+            for (const auto& event : date.second.order) 
+            {
+                if (predicate(date.first, event)) 
+                {
+                    std::stringstream s;
+                    s << date.first;
+                    std::string bufer = s.str() + " " + event;
+                    result.push_back(bufer);
+                }
+            }
+        }
+        return result;
+    }
+
 private:
     struct DayEvents
     {
