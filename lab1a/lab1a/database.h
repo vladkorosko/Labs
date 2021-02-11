@@ -18,8 +18,6 @@ public:
 
     std::string Last(const Date& d) const;
 
-    
-
 private:
     struct DayEvents
     {

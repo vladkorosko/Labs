@@ -10,15 +10,17 @@ using namespace std;
 
 string ParseEvent(istream& is) 
 {
-    // Реализуйте эту функцию
-    return "";
+    is >> ws;
+    string res;
+    getline(is, res);
+    return res;
 }
 
-//void TestAll();
+void TestAll();
 
 int main() 
 {
-    //TestAll();
+    TestAll();
 
     Database db;
 
@@ -73,7 +75,7 @@ int main()
 
     return 0;
 }
-/*
+
 void TestParseEvent() {
     {
         istringstream is("event");
@@ -96,4 +98,4 @@ void TestAll() {
     TestRunner tr;
     tr.RunTest(TestParseEvent, "TestParseEvent");
     tr.RunTest(TestParseCondition, "TestParseCondition");
-}*/
+}
