@@ -36,6 +36,9 @@
     <ClCompile Include="node.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="unit-tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="database.h">
@@ -54,6 +57,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="token.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="unit-tests.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

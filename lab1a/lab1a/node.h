@@ -45,13 +45,13 @@ bool Compare(Comparison cmp, const ToCompare& left, const ToCompare& right)
 class Node 
 {
 public:
-    virtual bool Evaluate(const Date& date, const std::string& event) = 0;
+    virtual bool Evaluate(const Date& date, const std::string& event) const = 0;
 };
 
 class EmptyNode : public Node 
 {
 public:
-    bool Evaluate(const Date& date, const std::string& event) override;
+    bool Evaluate(const Date& date, const std::string& event) const override;
 };
 
 class DateComparisonNode : public Node 
@@ -59,7 +59,7 @@ class DateComparisonNode : public Node
 public:
     DateComparisonNode(Comparison cmp, const Date& date);
 
-    bool Evaluate(const Date& date, const std::string& event) override;
+    bool Evaluate(const Date& date, const std::string& event) const override;
 
 private:
     Comparison cmp_;
@@ -71,7 +71,7 @@ class EventComparisonNode : public Node
 public:
     EventComparisonNode(Comparison cmp, const std::string& event);
 
-    bool Evaluate(const Date& date, const std::string& event) override;
+    bool Evaluate(const Date& date, const std::string& event) const override;
 
 private:
     Comparison cmp_;
@@ -83,7 +83,7 @@ class LogicalOperationNode : public Node
 public:
     LogicalOperationNode(LogicalOperation lo, std::shared_ptr<Node> left, std::shared_ptr<Node> right);
 
-    bool Evaluate(const Date& date, const std::string& event) override;
+    bool Evaluate(const Date& date, const std::string& event) const override;
 
 private:
     LogicalOperation operation_;

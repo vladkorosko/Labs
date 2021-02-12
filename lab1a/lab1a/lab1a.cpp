@@ -5,6 +5,7 @@
 #include "condition_parser.h"
 #include "node.h"
 #include "test_runner.h"
+#include "unit-tests.h"
 
 using namespace std;
 
@@ -98,4 +99,16 @@ void TestAll() {
     TestRunner tr;
     tr.RunTest(TestParseEvent, "TestParseEvent");
     tr.RunTest(TestParseCondition, "TestParseCondition");
+
+    tr.RunTest(TestEmptyNode, "TestEmptyNode");
+    tr.RunTest(TestDbAdd, "TestDbAdd");
+    tr.RunTest(TestDbFind, "TestDbFind");
+    tr.RunTest(TestDbLast, "TestDbLast");
+    tr.RunTest(TestDbRemoveIf, "TestDbRemoveIf");
+    tr.RunTest(TestInsertionOrder, "TestInsertionOrder");
+    tr.RunTest(TestsMyCustom, "TestsMyCustom");
+    tr.RunTest(TestDatabase, "TestDatabase");
+    tr.RunTest(TestDateComparisonNode, "TestDateComparisonNode");
+    tr.RunTest(TestEventComparisonNode, "TestEventComparisonNode");
+    tr.RunTest(TestLogicalOperationNode, "TestLogicalOperationNode");
 }
