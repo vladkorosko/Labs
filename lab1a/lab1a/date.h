@@ -1,9 +1,6 @@
 #pragma once
-#include <iostream>
-#include <sstream>
-#include <string>
 #include <iomanip>
-#include <exception>
+#include <sstream>
 
 class Date {
 public:

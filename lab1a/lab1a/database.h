@@ -49,6 +49,7 @@ public:
                         date->second.elements.erase(*curr);
                         count++;
                     }
+
                     if (date->second.order.empty()) 
                         date = events.erase(date);
                     else ++date;

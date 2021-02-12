@@ -13,7 +13,7 @@ void Database::Print(ostream& os) const
 {
 	for (auto i : events)
 		for (auto j : i.second.order)
-			os << i.first << " " << j;
+			os << i.first << " " << j << endl;
 }
 
 std::string Database::Last(const Date& date) const {

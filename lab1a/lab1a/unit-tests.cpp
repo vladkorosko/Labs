@@ -72,7 +72,7 @@ void TestDbAdd()
         db.Add({ 2017, 1, 1 }, "new year");
         ostringstream out;
         db.Print(out);
-        AssertEqual("2017-01-01 new year\n 2017-01-07 xmas\n", out.str(), "reverse ordering");
+        AssertEqual("2017-01-01 new year\n2017-01-07 xmas\n", out.str(), "reverse ordering");
     }
     {
         Database db;

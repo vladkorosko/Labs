@@ -4,7 +4,6 @@
 #include "condition_parser.h"
 #include <sstream>
 #include "node.h"
-#include <sstream>
 
 void TestDbAdd(); //+
 void TestDbFind();//+
