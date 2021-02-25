@@ -4,42 +4,52 @@
 #include <map>
 using namespace std;
 
-template <class It> shared_ptr<Node> ParseComparison(It& current, It end) {
-    if (current == end) {
+template <class It> shared_ptr<Node> ParseComparison(It& current, It end) 
+{
+    if (current == end) 
+    {
         throw logic_error("Expected column name: date or event");
     }
 
     Token& column = *current;
-    if (column.type != TokenType::COLUMN) {
+    if (column.type != TokenType::COLUMN) 
+    {
         throw logic_error("Expected column name: date or event");
     }
     ++current;
 
-    if (current == end) {
+    if (current == end) 
+    {
         throw logic_error("Expected comparison operation");
     }
 
     Token& op = *current;
-    if (op.type != TokenType::COMPARE_OP) {
+    if (op.type != TokenType::COMPARE_OP) 
+    {
         throw logic_error("Expected comparison operation");
     }
     ++current;
 
-    if (current == end) {
+    if (current == end) 
+    {
         throw logic_error("Expected right value of comparison");
     }
 
     Comparison cmp;
-    if (op.value == "<") {
+    if (op.value == "<") 
+    {
         cmp = Comparison::Less;
     }
-    else if (op.value == "<=") {
+    else if (op.value == "<=") 
+    {
         cmp = Comparison::LessOrEqual;
     }
-    else if (op.value == ">") {
+    else if (op.value == ">") 
+    {
         cmp = Comparison::Greater;
     }
-    else if (op.value == ">=") {
+    else if (op.value == ">=") 
+    {
         cmp = Comparison::GreaterOrEqual;
     }
     else if (op.value == "==") {
