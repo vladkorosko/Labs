@@ -1,0 +1,7 @@
+Event - something that happens in your life.
+Show last added event - find the last Event before the date you entered.
+DayEvents - a list of Events that happens in one day.
+TestRunner - special class for unit-test framework.
+Comparison - <, >, =, <=, >=, !=.
+Logical operation - AND, OR.
+TokenType - enum for division condition into parts (DATE, EVENT, COLUMN, LOGICAL_OP, COMPARE_OP, PAREN_LEFT, PAREN_RIGHT)
