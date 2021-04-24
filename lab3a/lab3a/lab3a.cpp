@@ -1,20 +1,49 @@
-// lab3a.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+#include "matrix.h"
+#include <iomanip>
+#include <chrono>
 
-#include <iostream>
+using namespace std;
+
+const string red = "\u001B[31m";
+const string green = "\u001B[32m";
+const string yellow = "\u001B[33m";
+const string blue = "\u001B[34m";
+
+void Benchmark()
+{
+    cout << "Multiplication matrixes" << endl;
+    cout << blue << setw(20) << "Number of elements" << yellow << setw(20) << "Simple algorithm" << green << setw(20) << "Parallel algorithm" << endl;
+    for (int n = 10; n < 100; n *= 2)
+    {
+        cout << blue << setw(20) << n;
+        Matrix A = AutoGenerate(n);
+        Matrix B = AutoGenerate(n);
+        time_t start = clock();
+        Matrix Simple = A * B;
+        time_t finish = clock();
+        cout << yellow << setw(20) << finish - start;
+        start = clock();
+        Matrix Parallel = MultiplyParallel(A, B);
+        finish = clock();
+        cout << green << setw(20) << finish - start << endl;
+    }
+    for (int n = 100; n < 600; n += 100)
+    {
+        cout << blue << setw(20) << n;
+        Matrix A = AutoGenerate(n);
+        Matrix B = AutoGenerate(n);
+        time_t start = clock();
+        Matrix Simple = A * B;
+        time_t finish = clock();
+        cout << yellow << setw(20) << finish - start;
+        start = clock();
+        Matrix Parallel = MultiplyParallel(A, B);
+        finish = clock();
+        cout << green << setw(20) << finish - start << endl;
+    }
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    Benchmark();
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
