@@ -141,9 +141,12 @@
   <ItemGroup>
     <ClCompile Include="lab3a.cpp" />
     <ClCompile Include="matrix.cpp" />
+    <ClCompile Include="unit_tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="matrix.h" />
+    <ClInclude Include="test_runner.h" />
+    <ClInclude Include="unit_tests.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

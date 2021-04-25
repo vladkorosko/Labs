@@ -32,7 +32,7 @@ public:
 };
 
 template <class T>
-std::ostream& operator << (std::ostream& os, const std::vector<T>& s) {
+std::ostream& operator<< (std::ostream& os, const std::vector<T>& s) {
 	os << "{";
 	bool first = true;
 	for (const auto& x : s) {
@@ -52,8 +52,8 @@ std::vector<int> ParseString(int n, const std::string s)
 
 }*/
 
-Matrix AutoGenerate(int n);
-Matrix AutoGenerate(int n, int m);
+Matrix AutoGenerateMatrix(int n);
+Matrix AutoGenerateMatrix(int n, int m);
 
 bool CanAdd(const Matrix& rhs, const Matrix& lhs);
 bool CanMultiplicate(const Matrix& rhs, const Matrix& lhs);

@@ -1,23 +1,19 @@
 #include "matrix.h"
+#include "unit_tests.h"
 #include <iomanip>
 #include <chrono>
 
 using namespace std;
 
-const string red = "\u001B[31m";
-const string green = "\u001B[32m";
-const string yellow = "\u001B[33m";
-const string blue = "\u001B[34m";
-
 void Benchmark()
 {
-    cout << "Multiplication matrixes" << endl;
+    cout << white << "Multiplication matrixes" << endl;
     cout << blue << setw(20) << "Number of elements" << yellow << setw(20) << "Simple algorithm" << green << setw(20) << "Parallel algorithm" << endl;
     for (int n = 10; n < 100; n *= 2)
     {
         cout << blue << setw(20) << n;
-        Matrix A = AutoGenerate(n);
-        Matrix B = AutoGenerate(n);
+        Matrix A = AutoGenerateMatrix(n);
+        Matrix B = AutoGenerateMatrix(n);
         time_t start = clock();
         Matrix Simple = A * B;
         time_t finish = clock();
@@ -30,8 +26,8 @@ void Benchmark()
     for (int n = 100; n < 600; n += 100)
     {
         cout << blue << setw(20) << n;
-        Matrix A = AutoGenerate(n);
-        Matrix B = AutoGenerate(n);
+        Matrix A = AutoGenerateMatrix(n);
+        Matrix B = AutoGenerateMatrix(n);
         time_t start = clock();
         Matrix Simple = A * B;
         time_t finish = clock();
@@ -45,5 +41,7 @@ void Benchmark()
 
 int main()
 {
+    TestAll();
+    srand(static_cast<int>(time(NULL)));
     Benchmark();
 }
